@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="Vacation.css">	
+</head>
+<body>
+<ul>
+<li><a  href="VacationIndex.html"> Home </a> </li>
+		<li><a  href="Seattle.html"> Seattle </a> </li>
+		<li><a class="active" href="portland.html"> Portland </a> </li>
+		<li><a href="sanfrancisco.html"> San Francisco</a> </li>
+		<li><a href="paris.html"> Paris </a> </li>
+		<li><a href="stockholm.html"> stockholm </a> </li>
+		<li><a href="london.html"> London </a> </li>
+		<li><a href="prague.html"> Prague </a> </li>
+		
+	</ul>
+<div id="googleMap" style="width:98%;height:600px;margin: 15px;margin-top: 5px;"></div>
+<script>
+function myMap() {
+//latitude and longitude of where the map is centered
+//how zoomed in the map is 
+var mapcenter = new google.maps.LatLng(45.520986, -122.675920);
+var mapProp= {
+    center:mapcenter,
+    zoom:12,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);    
+var Stockholm = new google.maps.LatLng(59.328920, 18.066706);
+var london = new google.maps.LatLng(51.507679, -0.127706);
+var Prague = new google.maps.LatLng(50.063557, 14.480311);
+var paris = new google.maps.LatLng(48.855901, 2.364224);
+var seattle = new google.maps.LatLng(47.594650, -122.331846);
+var portland = new google.maps.LatLng(45.528236, -122.665753);
+var SanFrancisco = new google.maps.LatLng(37.760981, -122.403389);
+
+var Stockholmmarker = new google.maps.Marker({position: Stockholm,icon: "marker.png"});
+Stockholmmarker.setMap(map);
+var londonmarker = new google.maps.Marker({position: london,icon: "marker.png"});
+londonmarker.setMap(map);
+var Praguemarker = new google.maps.Marker({position: Prague,icon: "marker.png"});
+Praguemarker.setMap(map);
+var parismarker = new google.maps.Marker({position: paris,icon: "marker.png"});
+parismarker.setMap(map);
+var seattlemarker = new google.maps.Marker({position: seattle,icon: "marker.png"});
+seattlemarker.setMap(map);
+var portlandmarker = new google.maps.Marker({position: portland,icon: "marker.png"});
+portlandmarker.setMap(map);
+var SanFranciscomarker = new google.maps.Marker({position: SanFrancisco,icon: "marker.png"});
+SanFranciscomarker.setMap(map);
+
+var myTrip = [seattle,portland,SanFrancisco,paris,Prague,Stockholm,london,seattle];
+var flightpath = new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#fcfc02",
+  strokeOpacity:0.8,
+   strokeWeight:2
+});
+flightpath.setMap(map);
+};
+
+
+
+</script>
+<div id="main">
+<p> 
+I want to visit Portland to learn all about the culture and go on a sky tram.
+</p>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBobPn96BW0A26NBUQrohkCdOPGYcDzUIQ&callback=myMap"></script>
+
+</body>
+</html>

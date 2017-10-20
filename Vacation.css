@@ -1,0 +1,52 @@
+body { 
+  background: url("BlueSky.jpeg") no-repeat center fixed; 
+  background-size: cover;
+}
+h1 {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 15px;
+	margin-bottom: 0px;
+	margin-top: 70px;
+	padding: 0;
+	overflow: hidden;
+	background-color: #99ddff;
+}
+
+li {
+	float: left;
+	border-right:1px solid #0077b3;
+}
+
+li:last-child {
+	border-right: none;
+}
+
+li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+li a:hover:not(.active) {
+    background-color: #0077b3;
+    color:white;
+}
+
+.active {
+    background-color: #0077b3;
+    color:white;
+}
+
+#main {
+	background-color: #99ddff;
+	margin: 15px;
+	text-align: center;
+	padding: 14px 16px;
+}
+
